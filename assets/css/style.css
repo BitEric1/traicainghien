@@ -147,6 +147,10 @@ body {
     object-fit: cover;
 }
 
+#slider {
+    transition: opacity 1s ease-in-out;
+}
+
 .hero__btn {
     width: 80px;
     height: 80px;
