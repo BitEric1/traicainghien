@@ -185,15 +185,18 @@
                         </div>
                         <div class="feedback__left-comment">
                             <div class="feedback__comment-wrap">
-                                <h2 class="feedback__comment-title">
-                                    Bình luận
-                                </h2>
-                                <button class="add__comment" id="add__comment">
-                                    Thêm
-                                </button>
-                            </div>
-                            <div class="comment" id="comment">
-                                <div class="comment__item">
+                                <div>
+                                    <h2 class="feedback__comment-title">
+                                        Bình luận
+                                    </h2>
+                                    <button
+                                        class="add__comment"
+                                        id="add__comment"
+                                    >
+                                        Thêm
+                                    </button>
+                                </div>
+                                <div class="comment__item add__comment-wrap">
                                     <div class="comment__avatar">
                                         <img
                                             src="./assets/icon/comment.svg"
@@ -203,11 +206,14 @@
                                     <input
                                         type="text"
                                         name="comment"
-                                        id="add__comment-text"
+                                        id="comment__text"
+                                        autocomplete="off"
                                         placeholder="Thêm bình luận"
                                         class="add__comment-text"
                                     />
                                 </div>
+                            </div>
+                            <div class="comment" id="comments">
                                 <div class="comment__item">
                                     <div class="comment__avatar">
                                         <img
@@ -216,6 +222,7 @@
                                         />
                                     </div>
                                     <p class="comment__text">Trại xấu quá</p>
+                                    <button class="comment__btn">Xóa</button>
                                 </div>
                                 <div class="comment__item">
                                     <div class="comment__avatar">
@@ -227,6 +234,7 @@
                                     <p class="comment__text">
                                         Đẹp nghiêng nước đổ thùng
                                     </p>
+                                    <button class="comment__btn">Xóa</button>
                                 </div>
                                 <div class="comment__item">
                                     <div class="comment__avatar">
@@ -236,6 +244,7 @@
                                         />
                                     </div>
                                     <p class="comment__text">Ai quan tâm</p>
+                                    <button class="comment__btn">Xóa</button>
                                 </div>
                                 <div class="comment__item">
                                     <div class="comment__avatar">
@@ -247,6 +256,7 @@
                                     <p class="comment__text">
                                         Không thể chấp nhận được
                                     </p>
+                                    <button class="comment__btn">Xóa</button>
                                 </div>
                             </div>
                         </div>
