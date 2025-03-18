@@ -21,6 +21,7 @@
         <!-- Css -->
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
     <body>
         <img src="./assets/icon/star.webp" alt="" class="decor" />
@@ -143,7 +144,140 @@
             <img src="./assets/icon/star.webp" alt="" class="decor" />
             <img src="./assets/icon/star.webp" alt="" class="decor" />
             <img src="./assets/icon/star.webp" alt="" class="decor" />
-
+            <div class="container">
+                <h1 class="title">ĐÁNH GIÁ</h1>
+                <div class="feedback__content">
+                    <div class="feedback__left">
+                        <div class="feedback__left-content">
+                            <h2 class="feedback__question">
+                                Trại đẹp không :)))
+                            </h2>
+                            <div class="feedback__group">
+                                <div class="feedback__choose-wrap">
+                                    <label for="yes">Có</label>
+                                    <input
+                                        type="radio"
+                                        name="feedback"
+                                        id="yes"
+                                        class="feedback__choose"
+                                    />
+                                </div>
+                                <div class="feedback__choose-wrap">
+                                    <label for="no">Không</label>
+                                    <input
+                                        type="radio"
+                                        name="feedback"
+                                        id="no"
+                                        class="feedback__choose"
+                                    />
+                                </div>
+                            </div>
+                            <h2 class="feedback__question">
+                                Bạn cho mấy sao ?
+                            </h2>
+                            <div class="feedback__group">
+                                <i class="fa-solid fa-star active"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="feedback__left-comment">
+                            <div class="feedback__comment-wrap">
+                                <h2 class="feedback__comment-title">
+                                    Bình luận
+                                </h2>
+                                <button class="add__comment" id="add__comment">
+                                    Thêm
+                                </button>
+                            </div>
+                            <div class="comment" id="comment">
+                                <div class="comment__item">
+                                    <div class="comment__avatar">
+                                        <img
+                                            src="./assets/icon/comment.svg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <input
+                                        type="text"
+                                        name="comment"
+                                        id="add__comment-text"
+                                        placeholder="Thêm bình luận"
+                                        class="add__comment-text"
+                                    />
+                                </div>
+                                <div class="comment__item">
+                                    <div class="comment__avatar">
+                                        <img
+                                            src="./assets/icon/user.svg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <p class="comment__text">Trại xấu quá</p>
+                                </div>
+                                <div class="comment__item">
+                                    <div class="comment__avatar">
+                                        <img
+                                            src="./assets/icon/user.svg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <p class="comment__text">
+                                        Đẹp nghiêng nước đổ thùng
+                                    </p>
+                                </div>
+                                <div class="comment__item">
+                                    <div class="comment__avatar">
+                                        <img
+                                            src="./assets/icon/user.svg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <p class="comment__text">Ai quan tâm</p>
+                                </div>
+                                <div class="comment__item">
+                                    <div class="comment__avatar">
+                                        <img
+                                            src="./assets/icon/user.svg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <p class="comment__text">
+                                        Không thể chấp nhận được
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback__right">
+                        <div class="feedback__right-content">
+                            <button class="feedback__right-btn">
+                                <img
+                                    src="./assets/icon/arrow.svg"
+                                    alt=""
+                                    class="feedback__right-btn-cion"
+                                />
+                            </button>
+                            <div class="feedback__right-img-wrap">
+                                <img
+                                    src="./assets/img/k9tin/picture-4.jpg"
+                                    alt=""
+                                    class="feedback__right-img"
+                                />
+                            </div>
+                            <button class="feedback__right-btn">
+                                <img
+                                    src="./assets/icon/arrow.svg"
+                                    alt=""
+                                    class="feedback__right-btn-cion"
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <script src="./assets/js/script.js"></script>
     </body>
