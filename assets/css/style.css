@@ -10,11 +10,16 @@ html {
 }
 
 body {
+    position: relative;
     font-size: 1.6rem;
     font-family: "Roboto", sans-serif;
-    background-color: #040d21;
-    color: #fff;
-    position: relative;
+    /* background-color: #040d21; */
+    color: #040d21;
+    /* background-color: #2f5bbb; */
+    background-color: #1c1ea1;
+    background-image: url("../img/common/bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .marquee {
@@ -94,15 +99,38 @@ body {
 }
 
 .home__title {
-    color: #fff;
+    color: #cd3b3b;
     text-align: center;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #fff;
-    font-family: "Moirai One";
-    font-size: 12.8rem;
+    font-family: "Rammetto One";
+    font-size: 128px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    background-color: #4158d0;
+    background-image: linear-gradient(
+        43deg,
+        #4158d0 0%,
+        #c850c0 46%,
+        #ffcc70 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    animation: bgs 3s linear infinite;
+}
+
+@keyframes bgs {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
 }
 
 .grade {
@@ -131,7 +159,8 @@ body {
     box-shadow: 4px 8px 5px 3px rgba(10, 9, 9, 0.25);
 }
 
-.grade__item:hover {
+.grade__item:hover,
+.add__comment:hover {
     color: #fff;
     background: #0f3994;
     box-shadow: 0 0 5px 1px rgba(207, 198, 198, 0.25),
@@ -167,6 +196,7 @@ body {
 }
 
 .title {
+    color: #fff;
     text-transform: uppercase;
     text-align: center;
     font-size: 5.8rem;
@@ -232,7 +262,6 @@ body {
 }
 
 .introduce {
-    margin-top: 100px;
     position: relative;
     padding-bottom: 100px;
 }
@@ -269,6 +298,8 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 30px;
+    outline: none;
+    border: none;
 }
 
 .video__play-btn {
@@ -293,8 +324,8 @@ body {
 }
 
 .feedback {
+    color: #fff;
     position: relative;
-    margin-top: 100px;
     padding-bottom: 100px;
 }
 
@@ -324,6 +355,10 @@ body {
     display: flex;
     gap: 20px;
     align-items: center;
+}
+
+.feedback__group i.active {
+    color: rgb(255, 238, 0);
 }
 
 .feedback__choose-wrap {
@@ -363,11 +398,12 @@ body {
     display: flex;
     gap: 30px;
     align-items: center;
+    justify-content: space-between;
 }
 
 .feedback__comment-title {
     font-size: 3.6rem;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .add__comment {
@@ -375,14 +411,16 @@ body {
     align-items: center;
     justify-content: center;
     color: #000;
-    width: 180px;
-    height: 60px;
+    width: 120px;
+    height: 50px;
     cursor: pointer;
     font-weight: 600;
     font-size: 2.6rem;
     background: #fff;
     border-radius: 30px;
-    border: 1px solid #0b0a0a;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease-in-out;
     box-shadow: 4px 8px 5px 3px rgba(10, 9, 9, 0.25);
 }
 
@@ -469,6 +507,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all 0.3s ease-in-out;
 }
 
 .feedback__right-btn {

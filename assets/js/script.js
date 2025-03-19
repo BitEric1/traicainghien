@@ -15,6 +15,11 @@ const imgs = {
         "./assets/img/k3tn/k3tn-2.jpg",
         "./assets/img/k3tn/k3tn-3.jpg",
     ],
+    camp: [
+        "./assets/img/camp/camp-1.jpg",
+        "./assets/img/camp/camp-2.jpg",
+        "./assets/img/camp/camp-3.jpg",
+    ],
 };
 
 const previousBtn = document.getElementById("previous");
@@ -25,6 +30,15 @@ const btnHeroGrade = document.querySelectorAll("div.hero__grade-item");
 
 let cnt = 0;
 let idImg = "k9tin";
+
+function changeImage(newIndex, img, id = "k9tin") {
+    img.style.opacity = 0;
+    setTimeout(() => {
+        cnt = newIndex;
+        img.src = imgs[id][cnt];
+        img.style.opacity = 1;
+    }, 800);
+}
 
 btnGrade.forEach((btn, index) => {
     btn.addEventListener("click", () => {
@@ -38,32 +52,23 @@ btnHeroGrade.forEach((btn, index) => {
         btnHeroGrade.forEach((btn) => btn.classList.remove("active"));
         btn.classList.add("active");
         idImg = btn.getAttribute("id");
-        changeImage(0);
+        changeImage(0, slider, idImg);
     });
 });
 
-function changeImage(newIndex) {
-    slider.style.opacity = 0;
-    setTimeout(() => {
-        cnt = newIndex;
-        slider.src = imgs[idImg][cnt];
-        slider.style.opacity = 1;
-    }, 800);
-}
-
 function changeImageInterval() {
     let newIndex = cnt + 1 >= imgs[idImg].length ? 0 : cnt + 1;
-    changeImage(newIndex);
+    changeImage(newIndex, slider, idImg);
 }
 
 previousBtn.addEventListener("click", () => {
     let newIndex = cnt - 1 < 0 ? imgs[idImg].length - 1 : cnt - 1;
-    changeImage(newIndex);
+    changeImage(newIndex, slider, idImg);
 });
 
 nextBtn.addEventListener("click", () => {
     let newIndex = cnt + 1 >= imgs[idImg].length ? 0 : cnt + 1;
-    changeImage(newIndex);
+    changeImage(newIndex, slider, idImg);
 });
 
 setInterval(() => {
@@ -147,10 +152,10 @@ window.onload = loadComments;
 const videoWrap = document.querySelector(".video__wrap");
 const video = document.querySelector(".video");
 const playBtn = document.querySelector(".video__play-btn");
-console.log(playBtn);
+
 playBtn.addEventListener("click", () => {
-    playBtn.style.display = "none";
     video.play();
+    playBtn.style.display = "none";
 });
 
 video.addEventListener("ended", () => {
@@ -168,3 +173,36 @@ videoWrap.addEventListener("click", () => {
         playBtn.style.display = "block";
     }
 });
+
+const stars = document.querySelectorAll(".feedback__group i");
+stars.forEach((star, index) => {
+    star.addEventListener("click", () => {
+        stars.forEach((star, i) => {
+            if (i <= index) {
+                star.classList.add("active");
+            } else {
+                star.classList.remove("active");
+            }
+        });
+    });
+});
+
+const campImg = document.querySelector(".feedback__right-img");
+const campBtnPrevious = document.querySelector(".feedback__right-previous");
+const campBtnNext = document.querySelector(".feedback__right-next");
+let campCnt = 0;
+let campId = "camp";
+campBtnPrevious.addEventListener("click", () => {
+    campCnt = campCnt - 1 < 0 ? imgs.camp.length - 1 : campCnt - 1;
+    changeImage(campCnt, campImg, campId);
+});
+
+campBtnNext.addEventListener("click", () => {
+    campCnt = campCnt + 1 >= imgs.camp.length ? 0 : campCnt + 1;
+    changeImage(campCnt, campImg, campId);
+});
+
+setInterval(() => {
+    campCnt = campCnt + 1 >= imgs.camp.length ? 0 : campCnt + 1;
+    changeImage(campCnt, campImg, campId);
+}, 10000);

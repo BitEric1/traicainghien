@@ -15,10 +15,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Moirai+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet"
         />
         <!-- Css -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" href="./assets/css/style.css" />
         <link rel="stylesheet" href="./assets/css/responsive.css" />
@@ -37,11 +38,41 @@
         <div class="home">
             <div class="container">
                 <div class="home__inner">
-                    <h1 class="home__title">Welcome to K9TIN</h1>
-                    <div class="grade">
-                        <a href="#hero" class="grade__item active">K9TIN</a>
-                        <a href="#hero" class="grade__item">K10TIN</a>
-                        <a href="#hero" class="grade__item">K3TN</a>
+                    <h1 class="home__title" data-aos="zoom-in">
+                        Welcome to K9TIN
+                    </h1>
+                    <div class="grade grade--wrap">
+                        <a
+                            href="#hero"
+                            class="grade__item active"
+                            data-aos="fade-right"
+                        >
+                            K9TIN
+                        </a>
+                        <a
+                            href="#hero"
+                            class="grade__item"
+                            data-aos="fade-right"
+                            data-aos-delay="100"
+                        >
+                            K10TIN
+                        </a>
+                        <a
+                            href="#hero"
+                            class="grade__item"
+                            data-aos="fade-right"
+                            data-aos-delay="200"
+                        >
+                            K3TN
+                        </a>
+                        <a
+                            href="#feedback"
+                            class="grade__item"
+                            data-aos="fade-right"
+                            data-aos-delay="300"
+                        >
+                            Hội trại
+                        </a>
                     </div>
                     <p class="home__desc">
                         Chào mừng các bạn đến với trại của sinh viên các lớp Tin
@@ -71,18 +102,32 @@
             <img src="./assets/icon/star.webp" alt="" class="decor" />
             <div class="container">
                 <div class="hero__inner">
-                    <h2 class="title">CÁC HOẠT ĐỘNG ĐẶC SẮC</h2>
+                    <h2 class="title" data-aos="fade-up">
+                        CÁC HOẠT ĐỘNG ĐẶC SẮC
+                    </h2>
                     <div class="grade">
                         <div
                             class="grade__item hero__grade-item active"
                             id="k9tin"
+                            data-aos="fade-up"
+                            data-aos-delay="100"
                         >
                             K9TIN
                         </div>
-                        <div class="grade__item hero__grade-item" id="k10tin">
+                        <div
+                            class="grade__item hero__grade-item"
+                            id="k10tin"
+                            data-aos="fade-up"
+                            data-aos-delay="200"
+                        >
                             K10TIN
                         </div>
-                        <div class="grade__item hero__grade-item" id="k3tn">
+                        <div
+                            class="grade__item hero__grade-item"
+                            id="k3tn"
+                            data-aos="fade-up"
+                            data-aos-delay="300"
+                        >
                             K3TN
                         </div>
                     </div>
@@ -137,17 +182,35 @@
             />
             <div class="container">
                 <div class="introduce__inner">
-                    <h2 class="title">Giới thiệu</h2>
+                    <h2 class="title" data-aos="fade-down">Giới thiệu</h2>
                     <div class="grade">
-                        <div class="grade__item">K9TIN</div>
-                        <div class="grade__item">K10TIN</div>
-                        <div class="grade__item">K3TN</div>
+                        <div
+                            class="grade__item"
+                            data-aos="fade-down"
+                            data-aos-delay="100"
+                        >
+                            K9TIN
+                        </div>
+                        <div
+                            class="grade__item"
+                            data-aos="fade-down"
+                            data-aos-delay="200"
+                        >
+                            K10TIN
+                        </div>
+                        <div
+                            class="grade__item"
+                            data-aos="fade-down"
+                            data-aos-delay="300"
+                        >
+                            K3TN
+                        </div>
                     </div>
                     <div class="separate"></div>
                     <div class="video__wrap">
                         <button class="video__play-btn">
                             <img
-                                src="./assets/icon/play.png"
+                                src="./assets/icon/play.svg"
                                 alt=""
                                 class="video__play-icon"
                             />
@@ -161,7 +224,7 @@
             </div>
         </div>
         <!-- Feedback -->
-        <div class="feedback">
+        <div class="feedback" id="feedback">
             <img src="./assets/icon/star.webp" alt="" class="decor" />
             <img src="./assets/icon/star.webp" alt="" class="decor" />
             <img src="./assets/icon/star.webp" alt="" class="decor" />
@@ -198,7 +261,7 @@
                                 Bạn cho mấy sao ?
                             </h2>
                             <div class="feedback__group">
-                                <i class="fa-solid fa-star active"></i>
+                                <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -289,7 +352,7 @@
                                 <img
                                     src="./assets/icon/arrow.svg"
                                     alt=""
-                                    class="feedback__right-btn-cion"
+                                    class="feedback__right-previous"
                                 />
                             </button>
                             <div class="feedback__right-img-wrap">
@@ -303,7 +366,7 @@
                                 <img
                                     src="./assets/icon/arrow.svg"
                                     alt=""
-                                    class="feedback__right-btn-cion"
+                                    class="feedback__right-next"
                                 />
                             </button>
                         </div>
@@ -312,5 +375,9 @@
             </div>
         </div>
         <script src="./assets/js/script.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>
