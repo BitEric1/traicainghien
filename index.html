@@ -24,6 +24,11 @@
         <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
     <body>
+        <div class="marquee">
+            <p class="marquee__text">
+                Chào mừng các bạn đến với trang giới thiệu về trại của chúng tôi
+            </p>
+        </div>
         <img src="./assets/icon/star.webp" alt="" class="decor" />
         <img src="./assets/icon/star.webp" alt="" class="decor" />
         <img src="./assets/icon/star.webp" alt="" class="decor" />
@@ -34,9 +39,9 @@
                 <div class="home__inner">
                     <h1 class="home__title">Welcome to K9TIN</h1>
                     <div class="grade">
-                        <div class="grade__item">K9TIN</div>
-                        <div class="grade__item">K10TIN</div>
-                        <div class="grade__item">K3TN</div>
+                        <a href="#hero" class="grade__item active">K9TIN</a>
+                        <a href="#hero" class="grade__item">K10TIN</a>
+                        <a href="#hero" class="grade__item">K3TN</a>
                     </div>
                     <p class="home__desc">
                         Chào mừng các bạn đến với trại của sinh viên các lớp Tin
@@ -59,7 +64,7 @@
             </div>
         </div>
         <!-- Hero -->
-        <div class="hero">
+        <div class="hero" id="hero">
             <img src="./assets/icon/star.webp" alt="" class="decor" />
             <img src="./assets/icon/star.webp" alt="" class="decor" />
             <img src="./assets/icon/star.webp" alt="" class="decor" />
@@ -67,6 +72,20 @@
             <div class="container">
                 <div class="hero__inner">
                     <h2 class="title">CÁC HOẠT ĐỘNG ĐẶC SẮC</h2>
+                    <div class="grade">
+                        <div
+                            class="grade__item hero__grade-item active"
+                            id="k9tin"
+                        >
+                            K9TIN
+                        </div>
+                        <div class="grade__item hero__grade-item" id="k10tin">
+                            K10TIN
+                        </div>
+                        <div class="grade__item hero__grade-item" id="k3tn">
+                            K3TN
+                        </div>
+                    </div>
                     <div class="hero__content">
                         <div class="hero__btn" id="previous">
                             <img
@@ -133,7 +152,10 @@
                                 class="video__play-icon"
                             />
                         </button>
-                        <img src="./assets/img/mau-son-2.png" alt="" />
+                        <video
+                            class="video"
+                            src="./assets/videos/noinaycoanh.mp4"
+                        ></video>
                     </div>
                 </div>
             </div>

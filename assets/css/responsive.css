@@ -1,6 +1,11 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: calc(768px - 0.02px)) {
     body {
         padding: 0 10px;
+        width: 100%;
+    }
+
+    .marquee__text {
+        text-align: center;
     }
 
     .home__title {
@@ -30,6 +35,15 @@
     .title {
         font-size: 4.8rem;
     }
+
+    .hero .decor:nth-child(1) {
+        display: none;
+    }
+
+    .hero .decor:nth-child(2) {
+        display: none;
+    }
+
     .hero__btn,
     .feedback__right-btn {
         width: 36px;
@@ -46,6 +60,10 @@
         right: 0;
     }
 
+    .feedback__comment-wrap div {
+        justify-content: space-between;
+    }
+
     .feedback__content {
         flex-direction: column;
         align-items: center;
@@ -57,5 +75,60 @@
 
     .feedback__right {
         order: 1;
+    }
+}
+
+@media screen and (max-width: calc(576px - 0.02px)) {
+    .home__title {
+        font-size: 5.5rem;
+    }
+
+    .home__desc {
+        font-size: 3.2rem;
+    }
+
+    .home__bottom-title {
+        font-size: 3rem;
+    }
+
+    .home__bottom-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .title {
+        font-size: 4rem;  
+    }
+
+    .grade__item {
+        width: 90px;
+        height: 40px;
+        font-size: 1.8rem;
+    }
+
+    .hero__btn:first-child, .feedback__right-btn:first-child {
+        left: -8%;
+    }
+    
+    .hero__btn:last-child, .feedback__right-btn:last-child {
+        right: -8%;
+    }
+
+    .feedback__question {
+        font-size: 3rem;
+    }
+
+    .feedback__comment-title {
+        font-size: 2.6rem;
+    }
+
+    .add__comment {
+        width: 100px;
+        height: 50px;
+        font-size: 1.8rem;
+    }
+
+    .feedback .decor:nth-child(4) {
+        left: 40%;
     }
 }

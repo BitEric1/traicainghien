@@ -1,37 +1,68 @@
-const imgs = [
-    "./assets/img/k9tin/picture-1.jpg",
-    "./assets/img/k9tin/picture-2.jpg",
-    "./assets/img/k9tin/picture-3.jpg",
-    "./assets/img/k9tin/picture-4.jpg",
-];
+const imgs = {
+    k9tin: [
+        "./assets/img/k9tin/picture-1.jpg",
+        "./assets/img/k9tin/picture-2.jpg",
+        "./assets/img/k9tin/picture-3.jpg",
+        "./assets/img/k9tin/picture-4.jpg",
+    ],
+    k10tin: [
+        "./assets/img/k10tin/k10tin-1.jpg",
+        "./assets/img/k10tin/k10tin-2.jpg",
+        "./assets/img/k10tin/k10tin-3.jpg",
+    ],
+    k3tn: [
+        "./assets/img/k3tn/k3tn-1.jpg",
+        "./assets/img/k3tn/k3tn-2.jpg",
+        "./assets/img/k3tn/k3tn-3.jpg",
+    ],
+};
 
 const previousBtn = document.getElementById("previous");
 const nextBtn = document.getElementById("next");
 const slider = document.getElementById("slider");
+const btnGrade = document.querySelectorAll("a.grade__item");
+const btnHeroGrade = document.querySelectorAll("div.hero__grade-item");
 
 let cnt = 0;
+let idImg = "k9tin";
+
+btnGrade.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        btnGrade.forEach((btn) => btn.classList.remove("active"));
+        btn.classList.add("active");
+    });
+});
+
+btnHeroGrade.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        btnHeroGrade.forEach((btn) => btn.classList.remove("active"));
+        btn.classList.add("active");
+        idImg = btn.getAttribute("id");
+        changeImage(0);
+    });
+});
 
 function changeImage(newIndex) {
     slider.style.opacity = 0;
     setTimeout(() => {
         cnt = newIndex;
-        slider.src = imgs[cnt];
+        slider.src = imgs[idImg][cnt];
         slider.style.opacity = 1;
     }, 800);
 }
 
 function changeImageInterval() {
-    let newIndex = cnt + 1 >= imgs.length ? 0 : cnt + 1;
+    let newIndex = cnt + 1 >= imgs[idImg].length ? 0 : cnt + 1;
     changeImage(newIndex);
 }
 
 previousBtn.addEventListener("click", () => {
-    let newIndex = cnt - 1 < 0 ? imgs.length - 1 : cnt - 1;
+    let newIndex = cnt - 1 < 0 ? imgs[idImg].length - 1 : cnt - 1;
     changeImage(newIndex);
 });
 
 nextBtn.addEventListener("click", () => {
-    let newIndex = cnt + 1 >= imgs.length ? 0 : cnt + 1;
+    let newIndex = cnt + 1 >= imgs[idImg].length ? 0 : cnt + 1;
     changeImage(newIndex);
 });
 
@@ -40,7 +71,7 @@ setInterval(() => {
 }, 10000);
 
 const API_URL =
-    "https://script.google.com/macros/s/AKfycbzta_GQnwvifHX-MmDrvQoPsIzz4JQHmnMSFw72Xlp3-0-LEJ5GgAjnj244IQqHKHVKbg/exec"; // Thay bằng URL API
+    "https://script.google.com/macros/s/AKfycbzta_GQnwvifHX-MmDrvQoPsIzz4JQHmnMSFw72Xlp3-0-LEJ5GgAjnj244IQqHKHVKbg/exec";
 
 async function loadComments() {
     try {
@@ -112,3 +143,28 @@ document
     .getElementById("add__comment")
     .addEventListener("click", submitComment);
 window.onload = loadComments;
+
+const videoWrap = document.querySelector(".video__wrap");
+const video = document.querySelector(".video");
+const playBtn = document.querySelector(".video__play-btn");
+console.log(playBtn);
+playBtn.addEventListener("click", () => {
+    playBtn.style.display = "none";
+    video.play();
+});
+
+video.addEventListener("ended", () => {
+    playBtn.style.display = "block";
+    video.pause();
+});
+
+videoWrap.addEventListener("click", () => {
+    playBtn.style.display = "none";
+
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+        playBtn.style.display = "block";
+    }
+});
